@@ -17,3 +17,27 @@
 //       - Controlo il costo del biglieto
 // 6- Altrimenti il prezzo sara intero
 // 7- Prezzo finale in forma umana (massimo due decimali)
+
+const kmDistanceClient = Number(prompt(`Inserisci il numero di chilometri da percorrere`));
+
+console.log(kmDistanceClient);
+
+const ageClient = Number(prompt(`Inserisci la tua eta`));
+
+console.log(ageClient);
+
+const priceKm = 0.21;
+
+console.log(priceKm);
+
+const priceFinalKm = kmDistanceClient * priceKm;
+
+console.log(priceFinalKm.toFixed(2));
+
+const discountUnder = 20;
+
+console.log(discountUnder);
+
+const discountPriceUnder = (priceFinalKm * discountUnder) / 100;
+const priceUnderFinal = priceFinalKm - discountPriceUnder;
+console.log(priceUnderFinal.toFixed(2));
