@@ -31,8 +31,7 @@ const priceKm = 0.21;
 console.log(priceKm);
 
 const priceFinalKm = kmDistanceClient * priceKm;
-
-console.log(priceFinalKm.toFixed(2));
+    console.log(priceFinalKm);
 
 const discountUnder = 20;
 
@@ -40,12 +39,24 @@ const discountOver = 40;
 
 const discountPriceUnder = (priceFinalKm * discountUnder) / 100;
 
-const priceUnderFinal = priceFinalKm - discountPriceUnder;
-
-console.log(priceUnderFinal.toFixed(2));
-
 const discountPriceOver = (priceFinalKm * discountOver) / 100;
 
-const priceOverFinal = priceFinalKm - discountPriceOver.toFixed(2);
+const under = 18;
 
-console.log(priceOverFinal.toFixed(2))
+const over = 65;
+
+if (ageClient < under) {
+    const priceUnderFinal = priceFinalKm - discountPriceUnder;
+    alert(`Hai uno sconto del 20% e il prezzo finale e ${priceUnderFinal.toFixed(2)} €`);
+    console.log(priceUnderFinal.toFixed(2));
+
+} else if (ageClient >= over) {
+    const priceOverFinal = priceFinalKm - discountPriceOver;
+    alert(`Hai uno sconto del 40% e il prezzo finale e ${priceOverFinal.toFixed(2)} €`)
+    console.log(priceOverFinal.toFixed(2))
+
+} else {
+    const priceFinalKm = kmDistanceClient * priceKm;
+    console.log(priceFinalKm.toFixed(2));
+    alert(`Il prezzo e di ${priceFinalKm.toFixed(2)} €`)
+}
