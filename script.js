@@ -36,8 +36,16 @@ console.log(priceFinalKm.toFixed(2));
 
 const discountUnder = 20;
 
-console.log(discountUnder);
+const discountOver = 40;
 
 const discountPriceUnder = (priceFinalKm * discountUnder) / 100;
+
 const priceUnderFinal = priceFinalKm - discountPriceUnder;
+
 console.log(priceUnderFinal.toFixed(2));
+
+const discountPriceOver = (priceFinalKm * discountOver) / 100;
+
+const priceOverFinal = priceFinalKm - discountPriceOver.toFixed(2);
+
+console.log(priceOverFinal.toFixed(2))
