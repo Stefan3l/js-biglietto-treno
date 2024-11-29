@@ -57,6 +57,6 @@ if (ageClient < under) {
 
 } else {
     let tariffNormal = priceFinalKm;
-    console.log(priceFinalKm.toFixed(2));
-    alert(`Il prezzo e di ${priceFinalKm.toFixed(2)} €`)
+    console.log(tariffNormal.toFixed(2));
+    alert(`Il prezzo e di ${tariffNormal.toFixed(2)} €`)
 }
