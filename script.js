@@ -19,44 +19,22 @@
 // 7- Prezzo finale in forma umana (massimo due decimali)
 
 const kmDistanceClient = Number(prompt(`Inserisci il numero di chilometri da percorrere`));
-
-console.log(kmDistanceClient);
-
 const ageClient = Number(prompt(`Inserisci la tua eta`));
-
-console.log(ageClient);
-
 const priceKm = 0.21;
+let priceFinalKm = kmDistanceClient * priceKm;
+let message = "";
 
-console.log(priceKm);
+    if (ageClient < 18) {
+        const discountPriceUnder = (priceFinalKm * 0.20);
+        discount = priceFinalKm - discountPriceUnder;
+        priceFinalKm -= priceFinalKm - discount;
+        message = (`Il tuo sconto e di 20% , e hai risparmiato ${discountPriceUnder.toFixed(2)} € 🤑`)
+} 
+    else if (ageClient >= 65) {
+        const discountPriceOver = (priceFinalKm * 0.40);
+        discount = priceFinalKm - discountPriceOver;
+        priceFinalKm -= priceFinalKm - discount;
+        message = (`Il tuo sconto e di 40% , e hai risparmiato ${discountPriceOver.toFixed(2)} € 🤑`)
+} 
 
-const priceFinalKm = kmDistanceClient * priceKm;
-    console.log(priceFinalKm);
-
-const discountUnder = 20;
-
-const discountOver = 40;
-
-const discountPriceUnder = (priceFinalKm * discountUnder) / 100;
-
-const discountPriceOver = (priceFinalKm * discountOver) / 100;
-
-const under = 18;
-
-const over = 65;
-
-if (ageClient < under) {
-    const priceUnderFinal = priceFinalKm - discountPriceUnder;
-    alert(`Hai uno sconto del 20% e il prezzo finale e ${priceUnderFinal.toFixed(2)} €`);
-    console.log(priceUnderFinal.toFixed(2));
-
-} else if (ageClient >= over) {
-    const priceOverFinal = priceFinalKm - discountPriceOver;
-    alert(`Hai uno sconto del 40% e il prezzo finale e ${priceOverFinal.toFixed(2)} €`)
-    console.log(priceOverFinal.toFixed(2))
-
-} else {
-    let tariffNormal = priceFinalKm;
-    console.log(tariffNormal.toFixed(2));
-    alert(`Il prezzo e di ${tariffNormal.toFixed(2)} €`)
-}
+    alert(`${message}  il prezzo finale e ${priceFinalKm.toFixed(2)} € 🤑`);
