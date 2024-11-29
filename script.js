@@ -56,7 +56,7 @@ if (ageClient < under) {
     console.log(priceOverFinal.toFixed(2))
 
 } else {
-    const priceFinalKm = kmDistanceClient * priceKm;
+    let tariffNormal = priceFinalKm;
     console.log(priceFinalKm.toFixed(2));
     alert(`Il prezzo e di ${priceFinalKm.toFixed(2)} €`)
 }
